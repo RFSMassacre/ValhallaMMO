@@ -20,6 +20,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
@@ -67,6 +68,13 @@ public interface NMS extends Listener {
     boolean hasUniqueAttribute(LivingEntity e, UUID uuid, String identifier, Attribute type);
     double getUniqueAttributeValue(LivingEntity e, UUID uuid, String identifier, Attribute type);
     void removeUniqueAttribute(LivingEntity e, String identifier, Attribute type);
+
+    void sendArmorChange(LivingEntity entity, ItemStack helmet, ItemStack chestplate, ItemStack leggings, ItemStack boots);
+    default void resetArmorChange(LivingEntity entity){
+        EntityEquipment equipment = entity.getEquipment();
+        if (equipment == null) return;
+        sendArmorChange(entity, equipment.getHelmet(), equipment.getChestplate(), equipment.getLeggings(), equipment.getBoots());
+    }
     default void onEnable(){
         // do nothing by default
     }

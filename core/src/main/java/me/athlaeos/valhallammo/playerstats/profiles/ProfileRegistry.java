@@ -41,6 +41,9 @@ public class ProfileRegistry {
         registerProfileType(new WoodcuttingProfile(null));
         registerProfileType(new DiggingProfile(null));
         registerProfileType(new FishingProfile(null));
+        registerProfileType(new MartialArtsProfile(null));
+
+        registerProfileType(new TradingProfile(null));
     }
 
     /**

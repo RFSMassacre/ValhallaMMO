@@ -12,7 +12,6 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 
 public class FlightRemoveReward extends PerkReward {
-    private static final NamespacedKey KEY_GRANTED_FLIGHT = new NamespacedKey(ValhallaMMO.getInstance(), "granted_flight");
     public FlightRemoveReward() {
         super("disable_flight");
     }
@@ -21,13 +20,13 @@ public class FlightRemoveReward extends PerkReward {
     public void apply(Player player) {
         Profile profile = isPersistent() ? ProfileRegistry.getPersistentProfile(player, PowerProfile.class) : ProfileRegistry.getSkillProfile(player, PowerProfile.class);
 
-        profile.setBoolean("flight", true);
+        profile.setBoolean("flight", false);
 
         if (isPersistent()) ProfileRegistry.setPersistentProfile(player, profile, PowerProfile.class);
         else ProfileRegistry.setSkillProfile(player, profile, PowerProfile.class);
         ProfileCache.resetCache(player);
 
-        FlightReward.setFlight(player, true);
+        FlightReward.setFlight(player, false);
     }
 
     @Override

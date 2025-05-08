@@ -43,6 +43,8 @@ commands:
     description: "Shorter command for /val profile light_weapons, allowing players to view their light weapon stats"
   heavyweapons:
     description: "Shorter command for /val profile heavy_weapons, allowing players to view their heavy weapon stats"
+  martialarts:
+    description: "Shorter command for /val profile martial_arts, allowing players to view their martial arts stats"
   lightarmor:
     description: "Shorter command for /val profile light_armor, allowing players to view their light armor stats"
   heavyarmor:
@@ -131,6 +133,9 @@ permissions:
   valhalla.recipes:
     default: op
     description: "Access to the /valhalla recipes command, which gives the user full control over all custom recipes on the server."
+  valhalla.merchants:
+    default: op
+    description: "Access to the /valhalla merchants command, which gives the user full control over custom merchants and their trades"
   valhalla.loottables:
     default: op
     description: "Access to the /valhalla loot command, which gives the user full control over all loot tables within the plugin."
@@ -221,3 +226,6 @@ permissions:
   valhalla.exp.heavy_armor.#:
     default: false
     description: "Adds (or subtracts) from the player's heavy armor experience multiplier. valhalla.exp.armor_heavy.100 gives the player +100% more experience in heavy armor. For optimization reasons, the player should have valhalla.exp.heavy_armor as well"
+  valhalla.exp.martial_arts.#:
+    default: false
+    description: "Adds (or subtracts) from the player's martial arts experience multiplier. valhalla.exp.martial_arts.100 gives the player +100% more experience in martial arts. For optimization reasons, the player should have valhalla.exp.martial_arts as well"
